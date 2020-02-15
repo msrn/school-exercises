@@ -1,6 +1,6 @@
 ## Data structures and algorithms* coursework
 
-(Tietorakenteet ja algoritmit -kurssi = TRA)
+*(Tietorakenteet ja algoritmit -kurssi = TRA)
 
 Goal was to create a program which scans text file and prints the most frequently occuring words in ascending order .
 

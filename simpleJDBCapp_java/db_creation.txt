@@ -1,0 +1,199 @@
+## CREATING TABLE T_CUSTOMERS
+
+ CREATE TABLE T_CUSTOMERS (
+ ID int PRIMARY KEY NOT NULL,
+ NAME varchar(250),
+ EMAIL varchar(250),
+ bdate DATE NOT NULL);
+
+## INSERT VALUES TO T_CUSTOMERS
+INSERT INTO T_CUSTOMERS VALUES (
+1, 'Niko Hartikainen', 'niko.Hartikainen@gmail.com',
+TO_DATE('01.01.1987','DD.MM.YYYY'));
+
+INSERT INTO T_CUSTOMERS VALUES (
+2, 'Pasi Untamo Hintikka', 'pasi.hintikka@gmail.com',
+TO_DATE('10.05.1977','DD.MM.YYYY'));
+
+INSERT INTO T_CUSTOMERS VALUES (
+3, 'Tapio Nevala', 'Tapio.Nevala@gmail.com',
+TO_DATE('31.01.1988','DD.MM.YYYY'));
+
+INSERT INTO T_CUSTOMERS VALUES (
+4, 'Kaarina Pokka', 'Kaarina.Pokka@gmail.com',
+TO_DATE('01.01.1990','DD.MM.YYYY'));
+
+INSERT INTO T_CUSTOMERS VALUES (
+5, 'Esteri Mari Ihalainen', 'esteri.ihalainen@gmail.com',
+TO_DATE('12.01.2002','DD.MM.YYYY'));
+
+INSERT INTO T_CUSTOMERS VALUES (
+6, 'Milja Niina Pennanen', 'milja.pennanen@gmail.com',
+TO_DATE('20.03.1986','DD.MM.YYYY'));
+
+INSERT INTO T_CUSTOMERS VALUES (
+7, 'Emma Jalonen', 'emma.jalonen@gmail.com',
+TO_DATE('19.07.1987','DD.MM.YYYY'));
+
+INSERT INTO T_CUSTOMERS VALUES (
+8, 'Juuso Risto Rannisto', 'juuso.rannisto@gmail.com',
+TO_DATE('05.05.1970','DD.MM.YYYY'));
+
+## CREATING T_ITEMS
+
+CREATE TABLE T_ITEMS (
+ID int PRIMARY KEY NOT NULL,
+TITLE varchar(250));
+
+## CREATING T_BOOKS
+
+CREATE TABLE T_BOOKS (
+BOOK_ID int,
+CATEGORY varchar(50),
+FOREIGN KEY(BOOK_ID) REFERENCES T_ITEMS(ID));
+
+## CREATING T_MOVIES
+
+CREATE TABLE T_MOVIES (
+MOVIE_ID int,
+GENRE varchar(50),
+AGEGROUP int,
+FOREIGN KEY(MOVIE_ID) REFERENCES T_ITEMS(ID));
+
+## INSERT BOOKS
+
+INSERT INTO T_ITEMS VALUES(
+1,  'Title Cracking the Coding Interview Programming Questions and Solutions');
+INSERT INTO T_BOOKS VALUES(
+1, 'Programming');
+
+INSERT INTO T_ITEMS VALUES(
+2,  'SolutionsThe Self-Taught Programmer The Definitive Guide to Programming Professionally
+');
+INSERT INTO T_BOOKS VALUES(
+2, 'Programming');
+
+INSERT INTO T_ITEMS VALUES(
+3,  'Professionally Data Science with Java Practical Methods for Scientists and Engineers
+');
+INSERT INTO T_BOOKS VALUES(
+3, 'Data Science');
+
+INSERT INTO T_ITEMS VALUES(
+4,  ' Mediterranean Cookbook For Beginners, Lose Weight And Get Healthy
+');
+INSERT INTO T_BOOKS VALUES(
+4, 'Wellbeing');
+
+## INSERT T_MOVIES
+
+INSERT INTO T_ITEMS VALUES(
+5,  'The Shape of Water');
+INSERT INTO T_MOVIES VALUES(
+5, 'Drama', 16);
+
+INSERT INTO T_ITEMS VALUES(
+6,  'Lady Bird');
+INSERT INTO T_MOVIES VALUES(
+6, 'Romance', 16);
+
+
+INSERT INTO T_ITEMS VALUES(
+7,  'Star Wars The Last Jedi');
+INSERT INTO T_MOVIES VALUES(
+7, 'Action', 16);
+
+
+INSERT INTO T_ITEMS VALUES(
+8,  'The Florida Project');
+INSERT INTO T_MOVIES VALUES(
+8, 'Comedy', 5);
+
+
+INSERT INTO T_ITEMS VALUES(
+9,  'Movie Title');
+INSERT INTO T_MOVIES VALUES(
+9, 'X-rated', 18);
+
+## CREATE LOANS TABLE
+
+NOT NULL 
+
+CREATE TABLE T_LOANS(
+LOAN_ID int PRIMARY KEY NOT NULL,
+BORROW_DATE date NOT NULL,
+RETURN_DATE date,
+CUSTOMER int REFERENCES T_CUSTOMERS(ID) NOT NULL,
+ITEM int REFERENCES T_ITEMS(ID)) NOT NULL;
+
+## 2.4 INSERT VALUES TO T_LOANS
+
+## BORROWS
+###customer id 1
+INSERT INTO T_LOANS VALUES(
+1,
+TO_DATE('01.02.2014','DD.MM.YYYY'),
+NULL,
+1,
+1);
+
+INSERT INTO T_LOANS VALUES(
+2,
+TO_DATE('01.02.2014','DD.MM.YYYY'),
+NULL,
+1,
+2);
+
+### customer id 6
+
+INSERT INTO T_LOANS VALUES(
+3,
+TO_DATE('05.02.2014','DD.MM.YYYY'),
+NULL,
+6,
+4);
+
+INSERT INTO T_LOANS VALUES(
+4,
+TO_DATE('05.02.2014','DD.MM.YYYY'),
+NULL,
+6,
+6);
+
+### customer id 2
+
+INSERT INTO T_LOANS VALUES(
+5,
+TO_DATE('08.02.2014','DD.MM.YYYY'),
+NULL,
+2,
+3);
+
+### customer id 5
+
+INSERT INTO T_LOANS VALUES(
+6,
+TO_DATE('09.02.2014','DD.MM.YYYY'),
+NULL,
+5,
+8);
+
+INSERT INTO T_LOANS VALUES(
+7,
+TO_DATE('09.02.2014','DD.MM.YYYY'),
+NULL,
+5,
+9);
+
+### RETURNS 
+## customer id 1
+
+Update should modify only the latest (open) loan!!
+ 
+UPDATE T_LOANS
+SET RETURN_DATE = TO_DATE('10.02.2014','DD.MM.YYYY')
+WHERE CUSTOMER = 1 and item = 1 AND RETURN_DATE IS NULL;
+
+UPDATE T_LOANS
+SET RETURN_DATE = TO_DATE('10.02.2014','DD.MM.YYYY')
+WHERE CUSTOMER = 1 and item = 2 AND RETURN_DATE IS NULL;

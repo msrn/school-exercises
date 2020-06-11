@@ -9,4 +9,4 @@ Run
 ```
 java -cp .:ojdbc7.jar Db
 ````
-You obviosly need a hosted database for this
+You obviously need a hosted database for this

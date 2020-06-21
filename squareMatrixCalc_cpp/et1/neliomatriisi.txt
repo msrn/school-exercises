@@ -1,0 +1,64 @@
+Matriiseilla pystytään kuvaamaan erinlaisia lukuryhmiä muunmuassa yhtälöryhmiä.
+Matriiseja on erinlaisia ja esimerkiksi neliömatriisi tarkoittaa matriisia, jossa on samanverran alkioita niin rivillä kuin sarakkeella.
+
+[[3,4,5][3,2,3][1,2,3]] on m x n neliömatriisi eli 3 x 3.
+
+Yhteenlasku:
+
+Kun halutaan suorittaa kahden eri neliömatriisin yhteenlasku täytyy molempien matriisien olla samankokosia.
+
+Esimerkkinä 2x2 matriisi. Yhteenlaskussa lasketaan yhteen A_i + B_j alkiot
+
+A = [[1,2][2,3]]
+B = [[4,5][6,7]]
+
+A + B = C
+
+C = [[1+4=5,2+5=7][2+6=8,3+7=10]]
+Eli selkeämmin
+
+C = [[5,7][8,10]]
+
+Vähennyslasku:
+
+Vähennyslaskussa pitää olla sama vaatimus eli neliömatriisien pitää olla samanakokoisia.
+
+Esimerkkinä 2x2 matriisi. Vähennyslaskussa miinustetaan  A_i - B_j alkiot
+
+
+A = [[1,2][2,3]]
+B = [[4,5][6,7]]
+
+A - B = C
+
+C = [[1-4=-3,2-5=-3][2-6=-4,3-7=-4]]
+Eli
+
+C = [[-3,-3][-4,-4]]
+
+Kertolasku:
+
+Neliömatriisissa on kaksi eri tapaa kertoa neliömatriisit. Yksi on skaalarilla kertominen
+
+Skaalari määritellään erikseen ja sitten tällä luvulla kerrotaan kaikki matriisin alkiot.
+
+Skaalari = 2
+A = [[1,2][2,3]]
+2 x A = [[1 x 2 = 2, 2 x 2 = 4][2 x 2 = 4, 3 x 2 = 6]]
+
+Eli [[2,4][4,6]]
+
+Matriisitulo:
+
+Matriisitulossa lasketaan A matriisin rivien alkioilla B matriisi sarake alkiot.
+
+Matriisitulossa A:n sarakkeiden määrä pitää olla sama kuin B:n rivien määrä.
+A x B = C
+
+A = [[1,2][2,3]]
+B = [[4,5][6,7]]
+
+C = [[(1x4)+(2x6)=16, (1x5)+(2x7)=19][(2x4)+(3x6)=26, (2x5)+(3x7)=31]]
+
+Eli [[16,19][26,31]]
+

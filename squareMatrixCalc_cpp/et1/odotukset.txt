@@ -1,0 +1,7 @@
+Omaan itse Java- ja C-kielisen taustan niin C++ tuntuu luontaiselta jatkeelta ja olen aina halunnutkin opetella C++ -kieltä tarkemmin.
+Itse kieli kuitenkin vaikuttaa niin paljon erinlaiselta että itsenäinen opiskelu on jäänyt hieman heikoksi. Joten odotan että kurssin loputtua ymmärrän C++ kommervenkin ja että osaan käyttää sitä sujuvasti.
+
+Kurssin toteutustapa myös vaikuttaa mielenkiintoiselta sillä se on ensimmäinen TOL:in ohjelmointikurssi jossa käytetään automatisoituja tarkastuksia. Koodin kattavuus ja build serverit ovat uusi asia itselleni ja olenkin odottanut niiden opettelua mutta aloittaminen on ollut vaikeata.
+Testejä olen aikasemmin kirjoittanut Javan JUnitillä.
+
+Kurssillä tullaan näemmä käyttämään paljon erinlaisia työkaluja ja odotan niiden opettelua. 
